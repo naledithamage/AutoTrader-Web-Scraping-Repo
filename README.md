@@ -1,4 +1,4 @@
-**#AutoTrader Web Scraping Used Car Database**
+**AutoTrader Web Scraping Used Car Database**
 
 **Overview:**
 This repository contains code for a web scraping project that creates a comprehensive database of used cars from AutoTrader UK. The data is then dynamically visualized using a Bokeh Server application.
