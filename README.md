@@ -1,13 +1,11 @@
-AutoTrader Web Scraping Used Car Database
+**#AutoTrader Web Scraping Used Car Database**
 
-Overview
-
+**Overview:**
 This repository contains code for a web scraping project that creates a comprehensive database of used cars from AutoTrader UK. The data is then dynamically visualized using a Bokeh Server application.
 
 The scraped dataset can be used for various machine learning and data analysis projects, such as predicting used car prices. For an example of this, see my related repository: AutoTrader Used Car Price Prediction.
 
-Features
-
+**Features:**
 Scrapes car listings from AutoTrader UK based on make and model.
 Dynamically visualizes the dataset with a Bokeh Server application.
 Supports proxy settings for reliable and large-scale web scraping.
@@ -23,23 +21,21 @@ BMW	X5M	BMW X5 M 4.4 5dr	54991.0	2016.0	14808.0	575.0	4.4	Automatic	Petrol
 Dacia	Sandero Stepway	Dacia Sandero Stepway 0.9 Ambiance 5dr	5995.0	2014.0	27000.0	90.0	0.9	Manual	Petrol
 Dependencies
 
-This project requires the following Python libraries:
-
+**This project requires the following Python libraries:**
 requests
 json
 pandas
 BeautifulSoup
 numpy
 bokeh
-How to Run the Project
 
-The project is divided into three parts:
+**How to Run the Project**
 
+**The project is divided into three parts:**
 Part One: Scraping Makes and Models
 This step collects all available makes and models listed on AutoTrader.
 
-Run the script:
-
+**Run the script:**
 python autoTraderScrapeMakesModels.py
 User Configurations:
 
@@ -49,8 +45,7 @@ OUTPUT_PKL_FILE: Name of the output file.
 Part Two: Scraping Used Car Listings
 Once you have the makes and models, this step retrieves detailed listings for the cars.
 
-Run the script:
-
+**Run the script:**
 python autoTraderUsedCarScrape.py
 User Configurations:
 
