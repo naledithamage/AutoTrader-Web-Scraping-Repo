@@ -1,79 +1,51 @@
 **AutoTrader Web Scraping Used Car Database**
 
-**Overview:**
-This repository contains code for a web scraping project that creates a comprehensive database of used cars from AutoTrader UK. The data is then dynamically visualized using a Bokeh Server application.
+**Overview**
 
-The scraped dataset can be used for various machine learning and data analysis projects, such as predicting used car prices. For an example of this, see my related repository: AutoTrader Used Car Price Prediction.
+This project involves web scraping data from the AutoTrader UK website to create a used car database. The data is visualized dynamically using a Bokeh Server application, allowing for easy exploration and analysis. The scraping process supports large-scale data collection with proxy settings for reliability.
 
-**Features:**
-Scrapes car listings from AutoTrader UK based on make and model.
-Dynamically visualizes the dataset with a Bokeh Server application.
-Supports proxy settings for reliable and large-scale web scraping.
-Achieved a 99.4% scraping success rate for several hundred thousand car listings.
-Example Dataset
-Here’s a sample of 10 random rows from the dataset:
-
-Make	Model	Name	Price	Year	Miles	BHP	L	Trans	Fuel
-Jeep	Grand Cherokee	Jeep Grand Cherokee 3.0 CRD V6 Overland 4x4 5dr	5989.0	2007.0	79800.0	215.0	3.0	Automatic	Diesel
-Nissan	Qashqai	Nissan Qashqai 1.6 N-TEC 2WD 5dr	8500.0	2012.0	50000.0	113.0	1.6	Manual	Petrol
-Audi	A4 Avant	Audi A4 AVANT TFSI SPORT 1.4 5dr	17200.0	2016.0	18379.0	148.0	1.4	Manual	Petrol
-BMW	X5M	BMW X5 M 4.4 5dr	54991.0	2016.0	14808.0	575.0	4.4	Automatic	Petrol
-Dacia	Sandero Stepway	Dacia Sandero Stepway 0.9 Ambiance 5dr	5995.0	2014.0	27000.0	90.0	0.9	Manual	Petrol
+**Features**
+Scrapes used car listings from AutoTrader UK.
+Builds a dataset that includes details such as make, model, price, year, mileage, fuel type, and more.
+Visualizes the data interactively using a Bokeh Server.
+Supports proxy settings for efficient large-scale scraping.
 Dependencies
 
-**This project requires the following Python libraries:**
+**To run this project, you’ll need the following Python libraries:**
 requests
 json
 pandas
 BeautifulSoup
 numpy
 bokeh
+How to Run
 
-**How to Run the Project**
+**The process is divided into three simple steps:**
 
-**The project is divided into three parts:**
-Part One: Scraping Makes and Models
-This step collects all available makes and models listed on AutoTrader.
+Step 1: Scrape Makes and Models
+Run the script to collect all available makes and models:
 
-**Run the script:**
 python autoTraderScrapeMakesModels.py
-User Configurations:
+Set output file and proxy settings in the script as needed.
 
-USING_PROXY: Enable/disable proxy settings.
-PROXY_SETTINGS: Specify proxy settings if applicable.
-OUTPUT_PKL_FILE: Name of the output file.
-Part Two: Scraping Used Car Listings
-Once you have the makes and models, this step retrieves detailed listings for the cars.
+Step 2: Scrape Used Car Listings
+Run the script to retrieve car details based on the makes and models:
 
-**Run the script:**
 python autoTraderUsedCarScrape.py
-User Configurations:
+Set input/output file names, proxy settings, and the number of pages to scrape in the script.
 
-USING_PROXY: Enable/disable proxy settings.
-PROXY_SETTINGS: Specify proxy settings.
-PKL_READ_FILE: Input the file created in Part One.
-PKL_OUT_FILE: Name of the output file.
-MAX_PAGE_NUM: Number of search pages to scrape (each page contains 12 listings).
-Part Three: Visualizing the Dataset
-This step uses Bokeh Server to dynamically visualize the dataset.
+Step 3: Visualize Data with Bokeh
+Use the Bokeh Server to create an interactive visualization:
 
-Open the bokehServerAutoTrader.py file and set DATA_FILE to the output file from Part Two.
-Run the Bokeh server from the command line:
+Update the DATA_FILE variable in bokehServerAutoTrader.py with your dataset file.
+Run the server:
 bokeh serve --show bokehServerAutoTrader.py
-A new tab will open in your browser with an interactive plot.
-Troubleshooting
+The visualization will open in your browser.
+Proxy Settings
 
-If you encounter issues with running the Bokeh Server, ensure your Anaconda PATH variables are correctly configured.
-
-Proxy Settings for Reliable Scraping
-
-Web scraping at scale often requires proxy settings to avoid being blocked by websites. This project supports the use of proxies for improved reliability and a higher success rate.
+For large-scale scraping, enable proxy settings to avoid being blocked by the website. Configure proxy details in the scripts for better reliability.
 
 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.
 
-Notes
-
-The scraper can be run for extended periods to collect up to 500,000 car listings.
-Feel free to experiment with different proxy configurations to optimize scraping performance.
